@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto+Mono:wght@100;200;300;400;500;700&display=swap");
+
+body {
+  background-color: rgba(23, 20, 20);
+  font-family: "Roboto Mono", monospace;
+}
+.main-container {
+  position: relative;
+}
+
+.app {
+  background-color: rgb(87 102 110);
+  z-index: 1;
+  width: 99vw;
+  height: 100vh;
+  position: fixed;
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
+  border: 1px solid rgba(23, 20, 20, 0.37);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 1px 5px 10px rgb(97, 93, 93), inset -1px -5px 50px #2b2a2a78;
+}
+
+.wrapper {
+  overflow-y: auto;
+  height: calc(100% - 20vh);
+}
+
+.search-input {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .search-input {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .search-input {
+    width: 30%;
+  }
+}
+
+.footer {
+  text-align: center;
+  height: 10vh;
+}
+
+.button {
+  background-color: transparent;
+}

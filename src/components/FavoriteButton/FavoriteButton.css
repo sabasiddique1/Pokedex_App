@@ -1,0 +1,18 @@
+.favorites-button img {
+  height: 80px;
+  margin-top: -808px;
+  margin-bottom: 740px;
+  margin-left: 1488px;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .favorites-button img{
+      margin-left: 900px;
+
+      margin-bottom: 789px;
+      position: relative;
+      top: -147px;
+      float: right;
+    } 
+}

@@ -1,0 +1,71 @@
+.favorites-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -20px;
+    padding-bottom: 100px;
+  }
+  
+  .favorites-container > * {
+    margin-bottom: 20px;
+    margin-right: 100px;
+  }
+  
+  .delete-all-button {
+    box-shadow: -2px 4px 2px rgba(28, 27, 27, 0.61), inset 4px -3px 6px #3d3a3a78;
+    background-color: #ae3434;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 1299px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: "Roboto Mono", monospace;
+    text-transform: capitalize;
+    font-weight: bolder;
+    margin-top: 9px;
+  }
+  
+  .no-fav-yet{
+    font-size: 34px;
+    text-transform: capitalize;
+    border-radius: 10px;
+    margin-left: 50px;
+    padding-top: 41px;
+    color: rgb(198 178 178);
+    text-shadow: -2px 1px 1px rgb(27, 24, 24);
+  
+  }
+  .no-fav-b{
+    box-shadow: -2px 4px 2px rgba(28, 27, 27, 0.61), inset 4px -3px 6px #3d3a3a78;
+    background-color: #cb8138;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: "Roboto Mono", monospace;
+    text-transform: capitalize;
+    font-weight: bolder;
+    margin-top: 9px;
+  
+  }
+  
+  @media only screen and (max-width: 768px) {
+  .favorites-container >*{
+    margin-top: 76px;
+    margin-left: 76px;
+    width: calc(70% - 100px);
+    scroll-behavior: smooth;
+  }
+  .delete-all-button{
+    margin-left: -50px;
+    margin-top:  50px;
+    margin-bottom: -100px;
+  }
+  }
