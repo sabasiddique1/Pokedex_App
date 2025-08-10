@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useFetch } from "../../components/hooks/hooks";
 import Loader from "../../components/Loader/loader";
 import "./pokemon.css";
+import "./pokemon-page.css";
 import { typeColors } from "../../assets/styles/typeColors";
 
 import FavoriteButton from "../../components/FavoriteButton/FavoriteButton";
@@ -40,8 +41,8 @@ const Pokemon = () => {
     <section className="container" style={{ background: bgColor }}>
       {loading && <Loader />}
       {pokemonData && (
-        <div className="result-container">
-          <div className="content-container">
+        <div className="result-container pokemon-page">
+          <div className="content-container pokemon-page__content">
             <div className="name-container">{pokemonData.name}</div>
             <div className="type-box-container">
               {pokemonData.types.map((type, index) => (
@@ -91,12 +92,13 @@ const Pokemon = () => {
                 {pokemonData.weight} kg
               </div>
             </div>
-            <div className="image-container">
-              <img
-                src={pokemonData.sprites.other.dream_world.front_default}
-                alt={pokemonData.name}
-              />
-            </div>
+            
+          </div>
+          <div className="image-container pokemon-page__image">
+            <img
+              src={pokemonData.sprites.other.dream_world.front_default}
+              alt={pokemonData.name}
+            />
           </div>
           <div className="favorites-button">
             <FavoriteButton pokemonData={pokemonData} />

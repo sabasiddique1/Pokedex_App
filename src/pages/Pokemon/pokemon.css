@@ -1,8 +1,3 @@
-.container {
-  color: rgb(227 170 170);
-  padding-bottom: 100px;
-  margin-right: -500px;
-}
 
 .stat-progress {
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 2px 2px rgba(45, 43, 43, 0.5), 0px 0 5px rgba(52, 50, 50, 0.5)
@@ -26,16 +21,17 @@
   font-weight: bold;
   font-family: "Roboto Mono", monospace;
   margin-top: 23px;
-  padding-left: 165px;
+  padding-inline: 40px;
 }
 
 .stat-box {
   color: rgb(154 135 135);
   text-shadow: -1px 1px 0px rgb(27, 24, 24);
-  width: 22%;
+  width: 100%;
   margin-bottom: 1rem;
-  margin-left: 20px;
+  margin-left: 0;
   text-transform: capitalize;
+  box-sizing: border-box;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -60,26 +56,15 @@
   color: #fff;
 }
 
-.image-container {
-  margin-left: 750px;
-}
-
-.image-container img {
-  height: 775px;
-  margin-top: -737px;
-  width: 800px;
-}
-
 .name-container {
-  font-size: 80px;
+  font-size: clamp(32px, 8vw, 80px);
   text-transform: capitalize;
   font-weight: bold;
   border-radius: 10px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin-left: 150px;
-
-  padding-top: 41px;
+  margin-left: 0;
+  padding-top: 16px;
   color: rgb(198 178 178);
   text-shadow: -5px 2px 3px rgb(27, 24, 24);
 }
@@ -101,35 +86,24 @@
   margin-bottom: 10px;
 }
 .type-box-container {
-  margin-left: 170px;
-  padding-top: 30px;
+  margin-left: 0;
 }
 .details-container {
-  display: flex;
-  flex-direction: row;
-  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, max-content));
+  align-items: baseline;
   font-size: 20px;
   color: rgb(154 135 135);
   text-shadow: -1px 1px 0px rgb(27, 24, 24);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-left: 170px;
- 
+  padding: 0 12px; /* match stats side padding */
+  gap: 12px 24px; /* row gap | column gap */
+  margin-top: -10px;
 }
 
-.height-container {
-  margin-right: 40px;
-  margin-left: 20px;
-}
-
-@media (max-width: 768px) {
-  .content-container {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
- 
- .image-container{    margin-bottom: 73px;}
- .image-container img{    height: 1000px;
-  width: 500px;
-  margin-top: -854px;
-  margin-left: -100px;}
+.height-container,
+.weight-container {
+  margin: 0;
+  white-space: nowrap;
 }

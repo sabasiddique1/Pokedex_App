@@ -1,18 +1,11 @@
-.favorites-button img {
-  height: 80px;
-  margin-top: -808px;
-  margin-bottom: 740px;
-  margin-left: 1488px;
+.favorites-button button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
 }
 
-
-@media only screen and (max-width: 768px) {
-  .favorites-button img{
-      margin-left: 900px;
-
-      margin-bottom: 789px;
-      position: relative;
-      top: -147px;
-      float: right;
-    } 
+.favorites-button img {
+  display: block;
+  margin: 0; /* positioning handled by page layout */
 }

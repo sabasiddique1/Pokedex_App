@@ -60,9 +60,8 @@
 
 .pokemon-height,
 .pokemon-weight {
-  display: flex;
   display: inline-block;
-  padding: 10px;
+  padding: 6px 10px;
 }
 
 .types {
@@ -100,10 +99,11 @@
 }
 
 .height-weight {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  margin-top: -10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, max-content));
+  gap: 6px 12px;
+  align-items: baseline;
+  margin-top: -6px;
   font-weight: bold;
 }
 
@@ -117,9 +117,8 @@
 
 .height,
 .weight {
-  flex-grow: 1;
-  max-width: 50%;
   text-shadow: -1px 1px 0px rgb(27, 24, 24);
+  white-space: nowrap;
 }
 
 @media only screen and (max-width: 768px) {

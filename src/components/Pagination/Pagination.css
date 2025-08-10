@@ -60,4 +60,22 @@
   margin-top: 8px;
 }
 
+/* Responsive: stack pagination controls on small screens */
+@media (max-width: 600px) {
+  .pagination {
+    flex-wrap: wrap;
+    gap: 8px 12px;
+  }
+  .pagination button,
+  .pagination select {
+    width: calc(50% - 12px);
+    margin-right: 0;
+    text-align: center;
+  }
+  .pagination button:first-child,
+  .pagination button:last-child {
+    width: 100%;
+  }
+}
+
 

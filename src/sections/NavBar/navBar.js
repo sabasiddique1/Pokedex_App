@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import "./navBar.css";
 import pokeballicon from "../../assets/images/pokeball-icon.png";
 import { Link, useLocation } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const NavBar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -80,6 +82,7 @@ const NavBar = () => {
         className={`backdrop ${isSidebarOpen ? "open" : ""}`}
         onClick={() => setIsSidebarOpen(false)}
       />
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar newestOnTop closeOnClick pauseOnHover />
     </div>
   );
 };

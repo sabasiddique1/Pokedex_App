@@ -39,10 +39,8 @@ button {
   background-color: transparent;
 }
 
-/* Ensure at least 3–4 cards on smaller screens while staying fluid */
-/* Tuned breakpoints to keep ~3–4 cards on small screens while filling wider screens */
 @media (max-width: 600px) {
-  .pokemon-container { grid-template-columns: repeat(2, 1fr); }
+  .pokemon-container { grid-template-columns: 1fr; }
 }
 
 @media (min-width: 601px) and (max-width: 900px) {

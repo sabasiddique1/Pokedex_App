@@ -18,8 +18,8 @@
     padding: 10px 20px;
     text-align: center;
     cursor: pointer;
-    margin: 8px 20px 20px auto; /* right aligned */
-    margin-left: 20px; /* add a bit of space on the left */
+    display: block;
+    margin: 8px 20px 20px auto;
     border-radius: 10px;
     font-size: 15px;
     font-family: "Roboto Mono", monospace;
@@ -58,10 +58,8 @@
   
   @media only screen and (max-width: 768px) {
     .favorites-container {
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: 1fr;
       gap: 16px;
     }
-    .delete-all-button{
-      margin: 8px auto 12px; /* center on small screens */
-    }
+    .delete-all-button{ display: block; margin: 8px 20px 12px auto; }
   }

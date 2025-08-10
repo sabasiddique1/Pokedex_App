@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Message = ({ msg }) => {
@@ -14,16 +14,7 @@ const Message = ({ msg }) => {
     }
   }, [isFavorited, msg]);
 
-  return (
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={true}
-        closeOnClick
-        pauseOnHover
-      />
-     
-  );
+  return null;
 };
 
 export default Message;

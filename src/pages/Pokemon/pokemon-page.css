@@ -1,0 +1,106 @@
+.pokemon-page {
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) minmax(360px, 1fr) 48px;
+  grid-template-rows: auto auto 1fr;
+  gap: 16px;
+  align-items: start;
+  padding-left: 55px;
+}
+
+.pokemon-page__content { min-width: 0; padding-left: 40px; padding-right: 40px; display: contents; }
+
+.pokemon-page__content .stats-container { grid-column: 1; grid-row: 3; }
+.pokemon-page__image { grid-column: 2; grid-row: 3; align-self: start; }
+
+.name-container { grid-column: 1 / 3; grid-row: 1; }
+.type-box-container { grid-column: 1 / 3; grid-row: 2; }
+.details-container { grid-column: 1; grid-row: 4; }
+
+.pokemon-page__image {
+  display: grid;
+  place-items: center;
+  align-self: start;
+  margin: 0 auto;
+  width: clamp(240px, 40vw, 560px);
+  aspect-ratio: 1 / 1;
+}
+.pokemon-page__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.result-container .favorites-button {
+  position: sticky;
+  top: 84px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  grid-column: 3;
+  z-index: 3;
+  margin-top: -14px;
+  padding-right: 10px;
+}
+.result-container .favorites-button img { width: 60px; height: 60px; }
+
+@media (max-width: 768px) {
+  .pokemon-page {
+    grid-template-columns: 1fr 40px;
+    grid-template-rows: auto auto auto auto;
+    gap: 12px;
+  }
+
+  .pokemon-page__image {
+    grid-column: 1;
+    grid-row: 4;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .pokemon-page__image { width: clamp(200px, 70vw, 420px); aspect-ratio: 1 / 1; margin-top: 50px; }
+  .pokemon-page__image img { width: 100%; height: 100%; object-fit: contain; }
+
+  .result-container .favorites-button {
+    grid-column: 2;
+    grid-row: 1;
+    top: 76px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .pokemon-page__image {
+    margin-top: -90px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1074px) {
+  .pokemon-page {
+    grid-template-columns: minmax(320px, 1fr) minmax(360px, 1fr) 40px;
+    align-items: start;
+  }
+
+  .pokemon-page__image {
+    align-self: start;
+    width: clamp(260px, 42vw, 520px);
+    aspect-ratio: 1 / 1;
+  }
+
+  .pokemon-page__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding-bottom: 72px;
+  }
+  
+  @supports (height: 100dvh) {
+    .container {
+      min-height: 100dvh;
+    }
+  }
+  
