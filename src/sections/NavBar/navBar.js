@@ -1,10 +1,11 @@
 
-import React from "react";
+import React, { useState } from "react";
 import "./navBar.css";
 import pokeballicon from "../../assets/images/pokeball-icon.png";
 import { Link, useLocation } from "react-router-dom";
 
 const NavBar = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const navRoutes = [
     {
       name: "Homepage",
@@ -24,25 +25,61 @@ const NavBar = () => {
 
   return (
     <div className="navbar">
-      <nav>
-        <div className="block">
-         <Link to="/pokemon"> <img className="block-img" src={pokeballicon} alt="pokeball icon" /></Link>
-        </div>
-        <div>
-          <ul className="data-ul">
-            {navRoutes.map(({ name, route }, index) => {
-              const isActive = location.pathname === route;
-              return (
-                <Link to={route} key={index}>
-                  <li className={isActive ? "data-li active" : "data-li"}>
-                    {name}
-                  </li>
-                </Link>
-              );
-            })}
-          </ul>
-        </div>
+      <nav className="nav-grid">
+        <Link to="/pokemon" className="logo" onClick={() => setIsSidebarOpen(false)}>
+          <img className="block-img" src={pokeballicon} alt="pokeball icon" />
+        </Link>
+
+        <ul className="nav-links">
+          {navRoutes.map(({ name, route }, index) => {
+            const isActive = location.pathname === route;
+            return (
+              <li key={index} className={isActive ? "data-li active" : "data-li"}>
+                <Link to={route}>{name}</Link>
+              </li>
+            );
+          })}
+        </ul>
+
+        <button
+          className="menu-btn"
+          aria-label="Open menu"
+          onClick={() => setIsSidebarOpen(true)}
+        >
+          ☰
+        </button>
       </nav>
+
+      <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
+        <div className="sidebar-header">
+          <Link to="/pokemon" onClick={() => setIsSidebarOpen(false)}>
+            <img className="block-img" src={pokeballicon} alt="pokeball icon" />
+          </Link>
+          <button
+            className="close-btn"
+            aria-label="Close menu"
+            onClick={() => setIsSidebarOpen(false)}
+          >
+            ×
+          </button>
+        </div>
+        <ul className="sidebar-links">
+          {navRoutes.map(({ name, route }, index) => {
+            const isActive = location.pathname === route;
+            return (
+              <li key={index} className={isActive ? "data-li active" : "data-li"}>
+                <Link to={route} onClick={() => setIsSidebarOpen(false)}>
+                  {name}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <div
+        className={`backdrop ${isSidebarOpen ? "open" : ""}`}
+        onClick={() => setIsSidebarOpen(false)}
+      />
     </div>
   );
 };

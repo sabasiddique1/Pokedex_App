@@ -1,3 +1,4 @@
+/* Card image inside the card */
 .pokemon-image {
   width: 180px;
   height: 170px;
@@ -6,22 +7,27 @@
   margin-top: -60px;
 }
 
+/* Page spacing so content never hides behind the fixed footer */
+.homepage-container {
+  padding: 16px 40px; /* match favorites side padding */
+  padding-bottom: 140px; /* leave room for the footer + pagination */
+}
+
+/* Responsive card grid */
 .pokemon-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 24px;
-  margin-left: 100px;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  align-items: stretch;
 }
 
-.pokemon-container > * {
-  width: calc(25% - 20px);
-  margin-bottom: 20px;
-}
-
+/* Link wrapper around each card should fill the grid cell */
 .search-card {
   text-decoration: none;
-  width: 390px;
+  display: block;
+  width: 100%;
 }
+
 button {
   margin: 0 10px;
   padding: 5px 10px;
@@ -31,4 +37,18 @@ button {
   color: #333;
   transition: background-color 0.3s ease;
   background-color: transparent;
+}
+
+/* Ensure at least 3–4 cards on smaller screens while staying fluid */
+/* Tuned breakpoints to keep ~3–4 cards on small screens while filling wider screens */
+@media (max-width: 600px) {
+  .pokemon-container { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .pokemon-container { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  .pokemon-container { grid-template-columns: repeat(4, 1fr); }
 }

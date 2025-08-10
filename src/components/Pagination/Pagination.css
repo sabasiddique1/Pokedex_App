@@ -2,8 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 180px;
-  margin-left: 10px;
+  gap: 10px;
+  margin-top: 24px;
 }
 
 .pagination button {
@@ -18,7 +18,6 @@
   box-shadow: 1px 5px 10px rgba(60, 58, 58, 0.61),
     inset -1px -5px 10px #555c5f20;
   font-family: "Roboto Mono", monospace;
-  margin-top: -250px;
 }
 
 .pagination button:hover {
@@ -37,7 +36,6 @@
   box-shadow: 1px 5px 10px rgba(28, 27, 27, 0.61),
     inset -1px -5px 10px #3d3a3a78;
   font-family: "Roboto Mono", monospace;
-  margin-top: -250px;
   text-align: center;
   word-spacing: -5px;
 }
@@ -57,13 +55,9 @@
 }
 .span-pagination{
   color: rgb(202, 196, 196);
-
-      margin-left: 781px;
-}
-@media only screen and (max-width: 768px){
-  .span-pagination{
-  color: rgb(202, 196, 196);
-    margin-left: 319px;}
+  display: block;
+  text-align: center;
+  margin-top: 8px;
 }
 
 
